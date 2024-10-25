@@ -63,6 +63,12 @@
     }
 
     async function getFriendship() {
+      const friend = await liff.getFrirndship();
+      document.getElementById("friendship").append(friend.friendFlag);
+      if(friend.friendFlag){
+          alert("You not have a friend")
+      }
+
     }
 
     async function sendMsg() {
@@ -122,7 +128,7 @@
       getEnvironment()
       getUserProfile()
       getContext()
-      // getFriendship()
+      getFriendship()
       // createUniversalLink()
     }
     main()
