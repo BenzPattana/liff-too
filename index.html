@@ -133,11 +133,17 @@
     async function main() {
       // alert("LINE Developers x Skooldio")
       await liff.init({ liffId: "2006495231-y9Ed5rrQ" })
-      getEnvironment()
-      getUserProfile()
-      getContext()
-      getFriendship()
-      // createUniversalLink()
+
+      if(liff.isLoggedIn()){
+        getEnvironment()
+        getUserProfile()
+        getContext()
+        getFriendship()
+        // createUniversalLink()
+
+      } else {
+        liff.login();
+      }
     }
     main()
   </script>
